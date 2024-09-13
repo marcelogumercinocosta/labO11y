@@ -1,0 +1,26 @@
+global:
+  scrape_interval: 2s
+  scrape_timeout: 2s
+  external_labels:
+    tenant: "mgl1-prometheus-prod"
+
+rule_files:
+  - alert.yml
+
+alerting:
+  alertmanagers:
+    - scheme: http
+      static_configs:
+        - targets:
+          - 'alertmanager:9093' 
+
+scrape_configs:
+  - job_name: services
+    metrics_path: /metrics
+    static_configs:
+      - targets:
+          - '192.168.192.1:9090'
+  - job_name: node
+    static_configs:
+      - targets: 
+        - '192.168.192.1:9100'

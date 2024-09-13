@@ -1,0 +1,69 @@
+groups:
+  - name: DemoAlerts
+    rules:
+      - alert: InstanceDownLow
+        expr: up{job="node"} < 1 
+        for: 0m 
+        labels:
+          severity: low
+        annotations:
+          description: 'Alert with low severity.Alert with low severity.Alert with low severity. Alert with low severity.Alert with low severity.Alert with low severity.Alert with low severity.Alert with low severity.Alert with low severity.Alert with low severity.Alert with low severity.Alert with low severity.Alert with low severity.'
+          summary: 'Alert with low severity.'
+          runbook_url: 'https://www.google.com'
+          external_url: 'https://www.google.com'
+
+      - alert: InstanceDownHigh
+        expr: up{job="node"} < 1 
+        for: 0m 
+        labels:
+          severity: high
+        annotations:
+          description: 'Alert with low severity.Alert with low severity.Alert with low severity. Alert with low severity.Alert with low severity.Alert with low severity.Alert with low severity.Alert with low severity.Alert with low severity.Alert with low severity.Alert with low severity.Alert with low severity.Alert with low severity.'
+          summary: 'Alert with high severity.'
+          runbook_url: 'https://www.google.com'
+          external_url: 'https://www.google.com'
+
+      - alert: InstanceDownCritical
+        expr: up{job="node"} < 1 
+        for: 0m
+        labels:
+          severity: critical
+        annotations:
+          description: 'Alert with low severity.Alert with low severity.Alert with low severity. Alert with low severity.Alert with low severity.Alert with low severity.Alert with low severity.Alert with low severity.Alert with low severity.Alert with low severity.Alert with low severity.Alert with low severity.Alert with low severity.'
+          summary: 'Alert with high severity.'
+          runbook_url: 'https://www.google.com'
+          external_url: 'https://www.google.com'
+
+      - alert: InstanceDownInfo
+        expr: up{job="node"} < 1 
+        for: 0m 
+        labels:
+          severity: info
+        annotations:
+          description: 'Alert with low severity.Alert with low severity.Alert with low severity. Alert with low severity.Alert with low severity.Alert with low severity.Alert with low severity.Alert with low severity.Alert with low severity.Alert with low severity.Alert with low severity.Alert with low severity.Alert with low severity.'
+          summary: 'Alert with high severity. {{ $labels.monitor }} verifique https://grf.1a.se.jaxyendy.com/d/-o5fD_VSz/bgp?orgId=1&var-datasource='
+          runbook_url: 'https://www.google.com'
+          external_url: 'https://grf.1a.se.jaxyendy.com/d/-o5fD_VSz/bgp?orgId=1&var-datasource={{ .ExternalLabels.monitor }}'
+          observacao: '{{ .ExternalLabels.monitor }}'
+
+      - alert: InstanceDownWarning
+        expr: up{job="node"} < 1 
+        for: 0m 
+        labels:
+          severity: warning
+        annotations:
+          description: 'Alert with low severity.Alert with low severity.Alert with low severity. Alert with low severity.Alert with low severity.Alert with low severity.Alert with low severity.Alert with low severity.Alert with low severity.Alert with low severity.Alert with low severity.Alert with low severity.Alert with low severity.'
+          summary: 'Alert with high severity.'
+          runbook_url: 'https://www.google.com'
+          external_url: 'https://www.google.com'
+
+      - alert: InstanceDownMedium
+        expr: up{job="node"} < 1 
+        for: 0m 
+        labels:
+          severity: medium
+        annotations:
+          description: 'Alert with low severity.Alert with low severity.Alert with low severity. Alert with low severity.Alert with low severity.Alert with low severity.Alert with low severity.Alert with low severity.Alert with low severity.Alert with low severity.Alert with low severity.Alert with low severity.Alert with low severity.'
+          summary: 'Alert with high severity.'
+          #runbook_url: 'https://www.google.com'
+          external_url: 'https://www.google.com'
